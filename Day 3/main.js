@@ -88,6 +88,44 @@ function doSomethinglater(callback){
     console.log("This runs before callback")
 }
 
-doSomethinglater(function(){
-        console.log("Im here after 3 seconds")
-    },)
+// doSomethinglater(function(){
+//         console.log("Im here after 3 seconds")
+//     },)
+
+
+
+
+//call backs more/easy understanding
+function calculate(a, b, type){
+    return type(a, b)
+}
+
+function sum(a, b){
+    return a + b;
+}
+
+function sub(a, b){
+     return a - b;
+}
+
+//console.log(calculate(10, 5, sub))
+
+
+//async/await
+
+function findSumTill100(){
+    let count = 0
+    for(let i =0; i < 100; i ++){
+        count = count + 1;
+    }
+    return count;
+}
+
+function randomfns2(){
+    const value = findSumTill100()
+    console.log(value);
+}
+
+setTimeout(randomfns2, 1000)
+console.log("Hello I'm in sync mode, your findingSumTill100 is in async mode, I'm the proof")
+
